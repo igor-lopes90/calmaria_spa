@@ -1,6 +1,16 @@
-:root {
-    --gradiente: linear-gradient(180deg, #E8F5C8 0%, #FFFFFF 96.87%);
-}
+//Variáveis
+    //cores
+    $cor-primaria: #0C0421;
+    $cor-secundaria: #4E75FF;
+    $cor-terciaria: #85A0FF;
+    $cor-quaternaria: #E8F5C8;
+    $cor-default: #CAD4FA;
+    $gradiente-primario: linear-gradient(180deg, #E8F5C8 0%, #FFFFFF 96.87%);
+    $gradiente-secundario: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(202, 212, 250, 0.3) 100%);
+    //fontes
+    $ft-textos: 'Montserrat', sans-serif;
+    $ft-titulos: 'Krona One', sans-serif;
+
 
 body {
     margin: 0;
@@ -9,14 +19,14 @@ body {
 }
 
 header {
-    background: ;
-    padding: 2rem;
+    background: $gradiente-primario;
+    padding: 2.5rem;
 
     nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.6rem;
+        gap: 2rem;
     }
 
     .linha {
@@ -34,9 +44,10 @@ header {
 
         a {
             text-decoration: none;
-            color: #0C0421;
+            color: $cor-primaria;
             font-weight: 400;
             font-size: 1.375rem;
+            font-family: $ft-textos;
         }
     }
 }
