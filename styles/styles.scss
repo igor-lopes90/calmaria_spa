@@ -1,16 +1,4 @@
-//Variáveis
-    //cores
-    $cor-primaria: #0C0421;
-    $cor-secundaria: #4E75FF;
-    $cor-terciaria: #85A0FF;
-    $cor-quaternaria: #E8F5C8;
-    $cor-default: #CAD4FA;
-    $gradiente-primario: linear-gradient(180deg, #E8F5C8 0%, #FFFFFF 96.87%);
-    $gradiente-secundario: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(202, 212, 250, 0.3) 100%);
-    //fontes
-    $ft-textos: 'Montserrat', sans-serif;
-    $ft-titulos: 'Krona One', sans-serif;
-
+@use './abstract/variaveis';
 
 body {
     margin: 0;
@@ -19,7 +7,7 @@ body {
 }
 
 header {
-    background: $gradiente-primario;
+    background: variaveis.$gradiente-primario;
     padding: 2.5rem;
 
     nav {
@@ -43,11 +31,55 @@ header {
 
             a {
             text-decoration: none;
-            color: $cor-primaria;
+            color: variaveis.$cor-primaria;
             font-weight: 400;
             font-size: 1.375rem;
-            font-family: $ft-textos;
+            font-family: variaveis.$ft-textos;
             }
+        }
+    }
+
+    #home {
+        max-width: 1040px;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .textos-home {
+            max-width: 464px;
+
+            h1 {
+                font-size: 2.625rem;
+                color: variaveis.$cor-primaria;
+                margin-bottom: 2rem;
+                font-family: variaveis.$ft-titulos;
+
+                span {
+                    color: variaveis.$cor-secundaria;
+                }
+            }
+
+            .btn-main {
+                width: 280px;
+                height: 66px;
+                border: none;
+                outline: none;
+                border-radius: 40px;
+                background: variaveis.$cor-secundaria;
+                color: #FFFFFF;
+                font-family: variaveis.$ft-textos;
+                font-size: 1.3rem;
+            }
+        }
+
+        .img-home {
+            max-width: 474px;
+
+            img{
+                width: 100%
+            };
         }
     }
 }
