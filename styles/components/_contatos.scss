@@ -1,0 +1,94 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+#contatos {
+    @include mixins.margem-central(80%);
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 5rem;
+
+    .contatos-imgs {
+        max-width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        img {
+            width: 100%;
+            &:nth-child(n + 2){
+                width: 48%;
+            }
+        }
+    }
+
+    .contatos-form {
+        max-width: 50%;
+        background: variaveis.$gradiente-primario;
+        padding: 2rem 3rem;
+        border-radius: 3rem;
+
+        .titulo {
+            @include mixins.ff-fs-cl(variaveis.$ft-titulos, 2rem, variaveis.$cor-secundaria);
+            font-weight: 400;
+            text-align: left;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .infos {
+            @include mixins.ff-fs-cl(variaveis.$ft-textos, 1.4rem, variaveis.$cor-primaria);
+            font-weight: 400;
+            line-height: 33px;
+            text-align: left;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+            align-self: stretch;
+
+            input {
+                border-radius: 2rem;
+                padding: 1rem;
+                border: none;
+            }
+
+            .form-group {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                label {
+                    @extend .infos;
+                    font-weight: bold;
+                    margin: 0;
+                }
+
+                textarea {
+                    @extend input;
+                }
+            }
+
+            .btn {
+                @extend input;
+                background: variaveis.$cor-secundaria;
+                margin-top: 2rem;
+                color: white;
+                font-size: 1rem;
+                width: 100%;
+                transition: .3s;
+
+                &:hover {
+                    background: variaveis.$cor-default;
+                }
+            }
+        }
+    }
+}
